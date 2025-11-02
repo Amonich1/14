@@ -1,23 +1,14 @@
  public class Message
  {
-     public virtual void Send()
-     {
-         Console.WriteLine("Сообщение отправлено.");
-     }
+     public virtual void Send()=>Console.WriteLine("Сообщение отправлено.");
  }
  public class Email : Message
  {
-     public override void Send()
-     {
-         Console.WriteLine("Email отправлен!");
-     }
+     public override void Send()=> Console.WriteLine("Email отправлен!");
  }
  public class SMS : Message 
  {
-     public override void Send()
-     {
-         Console.WriteLine("SMS отправлено!");
-     }
+     public override void Send()=> Console.WriteLine("SMS отправлено!");
  }
  class Program
  {
@@ -25,5 +16,6 @@
      {
          Message[] messages = { new Email(), new SMS(), new Message() };
          foreach (var m in messages) m.Send();
+         Console.ReadLine();
      }
  }
